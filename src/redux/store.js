@@ -3,7 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './rootReducer';
 import ReduxThunk from 'redux-thunk';
 import createSageMiddleware from 'redux-saga';
-import rootSaga from './sagas/cartSagas';
+import rootSaga from './sagas/rootSaga';
 
 const sagaMiddleware = createSageMiddleware();
 const middleware = [sagaMiddleware];

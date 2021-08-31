@@ -1,21 +1,9 @@
-import { FIND_EMPLOYEE, FIND_CUSTOMER } from "../types";
+import { FIND_EMPLOYEE_SAGA, FIND_CUSTOMER_SAGA } from '../types';
 
-export const findEmployee = () => async (dispatch) => {
-  const url = "https://randomuser.me/api/";
-  const setHeaders = { headers: { "Content-Type": "application/json" } };
-  let res = await fetch(url, { setHeaders });
-  res = await res.json();
-  console.log(res);
-  let employee = res.results[0];
-  dispatch({ type: FIND_EMPLOYEE, payload: employee });
+export const findEmployee = () => {
+  return { type: FIND_EMPLOYEE_SAGA };
 };
 
-export const findCustomer = () => async (dispatch) => {
-  const url = "https://randomuser.me/api/";
-  const setHeaders = { headers: { "Content-Type": "application/json" } };
-  let res = await fetch(url, { setHeaders });
-  res = await res.json();
-  console.log(res);
-  let customer = res.results[0];
-  dispatch({ type: FIND_CUSTOMER, payload: customer });
+export const findCustomer = () => {
+  return { type: FIND_CUSTOMER_SAGA };
 };
